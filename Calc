@@ -1,0 +1,271 @@
+package com.example;
+
+
+import java.util.*;
+
+class Basics{ //super class
+	int a,b,c,i=0,d=0;
+	Scanner in=new Scanner(System.in);
+	
+	void basics(){ //module 1
+		
+	
+	System.out.println("1.addition"
+			+ "\n2.subtraction"
+			+ "\n3.multiply"
+			+ "\n4.division"
+			+ "\n5.mudulo"
+			+ "\n6.square"
+			+ "\n7.square root"
+			+ "\n8.to exit calc");
+	if(i!=8) {   //enhanced for loop
+		i=in.nextInt();
+    
+    switch(i) {
+    case 1:
+    	for(;d!=8;) {
+    	System.out.println("enter 2 nos.");
+    	a=in.nextInt();
+    	b=in.nextInt();
+    	System.out.println(+(a+b));
+    	System.out.println("press \'8\'to exit or press any key ");
+    	d=in.nextInt();
+    	}
+    	break;
+    case 2:
+    	while(d!=8) {
+        	System.out.println("enter 2 nos.");
+        	a=in.nextInt();
+        	b=in.nextInt();
+        	System.out.println(+(a-b));
+        	System.out.println("press \'8\'to exit or press any key ");
+        	d=in.nextInt();
+        	}
+    	break;
+    case 3:
+    	while(d!=8) {
+        	System.out.println("enter 2 nos.");
+        	a=in.nextInt();
+        	b=in.nextInt();
+        	System.out.println(+(a*b));
+        	System.out.println("press \'8\'to exit or press any key ");
+        	d=in.nextInt();
+        	}
+    	break;
+    case 4:
+    	while(d!=8) {
+        	System.out.println("enter 2 nos.");
+        	a=in.nextInt();
+        	b=in.nextInt();
+        	System.out.println(+(a/b));
+        	System.out.println("press \'8\'to exit or press any key ");
+        	d=in.nextInt();
+        	}
+    	break;
+    case 5:
+    	while(d!=8) {
+        	System.out.println("enter 2 nos.");
+        	a=in.nextInt();
+        	b=in.nextInt();
+        	System.out.println(+(a%b));
+        	System.out.println("press \'8\'to exit or press any key ");
+        	d=in.nextInt();
+        	}
+    	break;
+    case 6:
+    	while(d!=8) {
+        	System.out.println("enter no.");
+        	a=in.nextInt();
+        	System.out.println(+(a*a));
+        	System.out.println("press \'8\'to exit or press any key ");
+        	d=in.nextInt();
+        	}
+    	break;
+    case 7:
+    	while(d!=8) {
+        	System.out.println("enter 2 nos.");
+        	a=in.nextInt();
+        	System.out.println(Math.sqrt(a));
+        	System.out.println("press \'8\'to exit or press any key ");
+        	d=in.nextInt();
+        	}
+    	break;
+    }
+    }
+	}
+	
+	
+	
+	}
+class Areaa extends Basics{ //module 2
+	void basics() {
+		System.out.println("1.area of square"
+				+ "\n2.area of triangle"
+				+ "\n3.area of rectangle"
+				+ "\n4.area of circle"
+				+ "\n5.to exit calc");
+		i=in.nextInt();
+		switch(i) {
+		case 1:
+			System.out.println("area of square:");
+			System.out.println("enter area");
+			a=in.nextInt();
+			System.out.println(a*a);
+			break;
+		case 2:
+			System.out.println("area of triangle");
+			System.out.println("enter breath and height");
+			a=in.nextInt();
+			b=in.nextInt();
+			System.out.println(0.5*a*b);
+			break;
+		case 3:
+			System.out.println("area of rectangle");
+			System.out.println("enter length and breath");
+			a=in.nextInt();
+			b=in.nextInt();
+			System.out.println(a*b);
+			break;
+					
+		case 4:
+			System.out.println("area of circle");
+			System.out.println("enter radius of circle");
+			a=in.nextInt();
+			System.out.println(Math.PI*a*a);
+			break;
+		case 5:
+			break;
+		}
+	}
+	
+}
+class Decimal extends Basics{ //module 3
+	int n;      //local variable declaration
+	int mod=0;
+	
+	
+	void decimal(){ //method
+		
+		
+		StringBuffer s=new StringBuffer();
+		System.out.println("1.decimal to binary"
+				+ "\n2.decimal to octal"
+				+ "\n3.decimal to hex"
+				+ "\n4.exit");
+		i=in.nextInt();
+		
+		switch(i) {
+		
+		case 1:
+			System.out.println("enter decimal value");
+			n=in.nextInt();
+			while(n>0){
+				mod = n%2;
+				n=n/2;
+				s=s.append(mod);
+				}
+				System.out.println("Binary is :: "+s.reverse());
+				break;
+		case 2:
+			System.out.println("enter decimal value");
+			n=in.nextInt();
+			while(n>0){
+				mod = n%8;
+				n=n/8;
+				s=s.append(mod);
+				}
+				System.out.println("Octal is :: "+s.reverse());
+				break;
+		case 3:
+			String save="123456789ABCDEF";
+			System.out.println("enter decimal value");
+			n=in.nextInt();
+			while(n>0){
+				mod = n%16;
+				n=n/16;
+				s=s.append(save.charAt(mod-1));
+				}
+				System.out.println("Hexa is :: "+s.reverse());
+				break;
+		case 4:
+			System.out.println("terminated");
+		}
+		
+		
+		}
+		
+	
+}
+
+class Fc extends Basics{ //module 4 fahrenheit to celsius 
+	 
+	double f,c;
+	
+	Fc() {  //constructor
+		System.out.println("\n1.fahrenheit to celsius"
+				+"\n 2.celsius to fahrenheit");
+		i=in.nextInt();
+		switch(i) {
+		case 1:
+		
+			System.out.println("enter the fahrenheit value");
+			f=in.nextInt();
+			double a=(f-32)/1.8;
+			System.out.println(a);
+			break;
+		case 2:
+			System.out.println("enter the celsius value");
+			c=in.nextInt();
+			double b=(c*1.8)+32;
+			System.out.println(b);
+			break;
+		}
+	}
+}
+public class Calc {  //main class
+
+	
+
+	public static void main(String[] args) {
+		Basics b= new Basics();
+		Areaa a= new Areaa();
+		Decimal d = new Decimal();
+
+		int i ;
+		Scanner in=new Scanner(System.in);
+		System.out.println("1. for basics calculations"
+				+ "\n2. area calculation"
+				+ "\n3. to convert decimal no."
+				+ "\n4. to convert fahern to celsius");
+		System.out.println("enter ur choice \n");
+		i=in.nextInt();
+		
+		switch(i) {
+		
+		case 1:
+		{
+			b.basics();
+		}
+			break;
+		case 2:
+		{
+			a.basics();
+		}
+		
+		break;
+		case 3:
+			d.decimal();
+			break;
+		case 4:
+			
+			new Fc();
+			break;
+			default:
+				System.out.println("enter the right choice");
+		
+		}
+		
+
+	}
+
+}
